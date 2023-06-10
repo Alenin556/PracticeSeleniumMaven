@@ -54,6 +54,8 @@ public class BattleNetPage {
     public void inputBirthDayDate(String date) {
         birthDayDateField.sendKeys(date); }
 
+
+
     //метод для выбора поля даты рождения
     public void clickNextButton() {
         nextButton.click(); }

@@ -1,8 +1,11 @@
 import data.Data;
 import org.junit.jupiter.api.*;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.BattleNetPage;
 
 import java.util.concurrent.TimeUnit;
@@ -21,7 +24,6 @@ public class BattleNetAuthorizationTest {
         driver.getWindowHandle();
         battleNetPage = new BattleNetPage(driver);
 
-
     }
 
     @BeforeEach
@@ -39,7 +41,12 @@ public class BattleNetAuthorizationTest {
         battleNetPage.clickNextButton();
 
     }
+    @Test
+    void registrationFindDateField() {
+        battleNetPage.clickRegistrationButton();
+        driver.findElement(By.xpath("//*[@name='dob-plain']")).isDisplayed();
 
+    }
     @Test
     void authorization() {
         battleNetPage.inputEmail("aleninmailbox@gmail.com");
