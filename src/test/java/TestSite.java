@@ -63,9 +63,9 @@ public class TestSite {
     @Test
     void registrationTestPageObject1() {
         registrationPage.clickLoginBtn();
-        registrationPage.inputName("Андрей314");
-        registrationPage.inputMail("aleninmail132@icloud.com");
-        registrationPage.inputPassword("Andrew13");
+        registrationPage.inputName("Андрей3344");
+        registrationPage.inputMail("aleninmail1345@icloud.com");
+        registrationPage.inputPassword("Andrew1123");
         registrationPage.clickRegistrationBtn();
 
     }
@@ -76,12 +76,14 @@ public class TestSite {
 
 
     }
-
+/*
     @AfterEach
         // выходим из драйвера
     void tearsDown() {
         driver.quit();
         driver = null;
     }
+
+ */
 
 }

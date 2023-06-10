@@ -10,6 +10,8 @@ import java.util.Locale;
 import java.util.Random;
 
 public class Data {
+
+    static Faker faker = new Faker();
     static FakeValuesService fakeValuesService = new FakeValuesService(
             new Locale("en-GB"), new RandomService());
 
@@ -25,6 +27,11 @@ public class Data {
 
     public static String generatePassword () {
         var password = fakeValuesService.regexify("[a-z1-9]{10}");
+        return password;
+    }
+
+    public static String generateDate () {
+        var password = faker.date().birthday().toString();
         return password;
     }
 

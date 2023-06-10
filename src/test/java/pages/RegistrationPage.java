@@ -14,26 +14,26 @@ public class RegistrationPage {
     }
 
     //локатор для кнопки входа или авторизации
-    @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[2]/a")
+    @FindBy(xpath = "//*[contains(text(),'Войти')]")
     private WebElement loginButton;
     // локатор для ввода имени
-    @FindBy(xpath ="/html/body/div[3]/div[1]/div[2]/form/table/tbody/tr[1]/td[2]/input")
+    @FindBy(xpath ="//*[(@name='name')]")
     private WebElement nameField;
     //локатор для ввода почты
-    @FindBy(xpath ="/html/body/div[3]/div[1]/div[2]/form/table/tbody/tr[2]/td[2]/input")
-    private WebElement mailField;
+    @FindBy(xpath ="//*[(@name='email')]")
+    private WebElement emailField;
     //локатор для ввода пароля
-    @FindBy(xpath ="/html/body/div[3]/div[1]/div[2]/form/table/tbody/tr[3]/td[2]/input")
+    @FindBy(xpath ="//*[(@name='password')]")
     private WebElement passwordField;
     // локатор для кнопки регистрации
-    @FindBy(xpath = "/html/body/div[3]/div[1]/div[2]/form/table/tbody/tr[4]/td[2]/input")
+    @FindBy(xpath = "//*[(@value='Авторизоваться')]")
     private WebElement registrationBtn;
 
     public void inputName(String name) {
         nameField.sendKeys(name); }
 
     public void inputMail(String mail) {
-        mailField.sendKeys(mail); }
+        emailField.sendKeys(mail); }
 
     public void inputPassword(String password) {
         passwordField.sendKeys(password);
