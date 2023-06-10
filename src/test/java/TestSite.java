@@ -7,13 +7,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import page.AutoRegistrarion;
-import page.RegistrationPage;
+import pages.AutoRegistration;
+import pages.RegistrationPage;
 
 public class TestSite {
     private static WebDriver driver;
     private static RegistrationPage registrationPage;
-    private static AutoRegistrarion autoRegistrarion;
+    private static AutoRegistration autoRegistration;
+
 
 
     @BeforeAll // перед запуском подключаем драйвер для взаимодействия с браузером
@@ -24,7 +25,7 @@ public class TestSite {
         driver = new ChromeDriver(options);
         driver.getWindowHandle();
         registrationPage = new RegistrationPage(driver);
-        autoRegistrarion = new AutoRegistrarion(driver);
+        autoRegistration = new AutoRegistration(driver);
 
     }
 
@@ -32,6 +33,7 @@ public class TestSite {
     void connect() {
         driver.get("http://users.bugred.ru/");
     }
+
   /*  @Test
     void registrationTestCSS() {
         driver.get("http://users.bugred.ru/");
@@ -42,6 +44,8 @@ public class TestSite {
         driver.findElement(By.name("act_register_now")).click();
 
     }
+
+   */
 
 
     @Test
@@ -54,7 +58,7 @@ public class TestSite {
 
     }
 
-   */
+
 
     @Test
     void registrationTestPageObject1() {
@@ -68,7 +72,7 @@ public class TestSite {
     @Test
     void registrationTestPageObject2() {
         var userInfo = Data.validUserInformation();
-        autoRegistrarion.authorization(userInfo);
+        autoRegistration.authorization(userInfo);
 
 
     }

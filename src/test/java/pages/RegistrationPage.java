@@ -1,4 +1,4 @@
-package page;
+package pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,7 +15,7 @@ public class RegistrationPage {
 
     //локатор для кнопки входа или авторизации
     @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[2]/a")
-    private WebElement loginBtn;
+    private WebElement loginButton;
     // локатор для ввода имени
     @FindBy(xpath ="/html/body/div[3]/div[1]/div[2]/form/table/tbody/tr[1]/td[2]/input")
     private WebElement nameField;
@@ -40,7 +40,7 @@ public class RegistrationPage {
     }
 
     public void clickLoginBtn() {
-        loginBtn.click(); }
+        loginButton.click(); }
 
     public void clickRegistrationBtn() {
         registrationBtn.click(); }
