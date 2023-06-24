@@ -10,20 +10,23 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import pages.AutoRegistration;
 import pages.RegistrationPage;
 
-public class TestSite {
+public class TestUserSite {
     private static WebDriver driver;
     private static RegistrationPage registrationPage;
     private static AutoRegistration autoRegistration;
 
 
-
-    @BeforeAll // перед запуском подключаем драйвер для взаимодействия с браузером
+    @BeforeAll
+    // Перед началом написания тестов, инициализируем драйвер для взаимодействия с браузером.
+    // Инициализация (от англ. initialization, инициирование) — создание, подключение, активация, подготовка к работе, определение параметров.
     static void setUpAll() {
         System.setProperty("webdriver.chrome.driver", "C:\\Java Works\\Netology Homeworks\\SeleniumSiteProjectMaven\\driver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
-        driver = new ChromeDriver(options);
-        driver.getWindowHandle();
+        driver = new ChromeDriver(options); //добавляем драйверу опции и методы по взаимодействию с объектами
+        driver.getWindowHandle(); // опция для проведения тестов в открытом окне браузера
+
+        // добавляем страницам возможность работать с объектами
         registrationPage = new RegistrationPage(driver);
         autoRegistration = new AutoRegistration(driver);
 
@@ -34,18 +37,16 @@ public class TestSite {
         driver.get("http://users.bugred.ru/");
     }
 
-  /*  @Test
+    @Test
     void registrationTestCSS() {
         driver.get("http://users.bugred.ru/");
         driver.findElement(By.cssSelector("[href = '/user/login/index.html']")).click();
         driver.findElement(By.name("name")).sendKeys("Андрей");
         driver.findElement(By.name("email")).sendKeys("alenin34@gmail.com");
         driver.findElement(By.cssSelector("input[type=password]")).sendKeys("AndrewCss");
+        // тест по факту пройден, но в окне браузера остается не заполненным поле пароля
         driver.findElement(By.name("act_register_now")).click();
-
     }
-
-   */
 
 
     @Test
@@ -59,7 +60,6 @@ public class TestSite {
     }
 
 
-
     @Test
     void registrationTestPageObject1() {
         registrationPage.clickLoginBtn();
@@ -69,11 +69,11 @@ public class TestSite {
         registrationPage.clickRegistrationBtn();
 
     }
+
     @Test
     void registrationTestPageObject2() {
         var userInfo = Data.validUserInformation();
         autoRegistration.authorization(userInfo);
-
 
     }
 /*

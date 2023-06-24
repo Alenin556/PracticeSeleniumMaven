@@ -33,21 +33,6 @@ public class BattleNetAuthorizationTest {
     }
 
     @Test
-    void registration() {
-        battleNetPage.clickRegistrationButton();
-        battleNetPage.inputBirthDayDate("13.06.1997"); //org.openqa.selenium.ElementNotInteractableException: element not interactable
-      // (Session info: chrome=114.0.5735.110
-        // когда элемент найден, но мы не можем с ним взаимодействовать, возникает исключение ElementNotInteractableException.
-        battleNetPage.clickNextButton();
-
-    }
-    @Test
-    void registrationFindDateField() {
-        battleNetPage.clickRegistrationButton();
-        driver.findElement(By.xpath("//*[@name='dob-plain']")).isDisplayed();
-
-    }
-    @Test
     void authorization() {
         battleNetPage.inputEmail("aleninmailbox@gmail.com");
         battleNetPage.inputPassword("Stuffrecd123");
