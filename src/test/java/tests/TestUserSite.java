@@ -1,3 +1,5 @@
+package tests;
+
 import data.Data;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -7,20 +9,20 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import pages.AutoRegistration;
+import pages.AutoUserRegistration;
 import pages.RegistrationPage;
 
 public class TestUserSite {
     private static WebDriver driver;
     private static RegistrationPage registrationPage;
-    private static AutoRegistration autoRegistration;
+    private static AutoUserRegistration autoUserRegistration;
 
 
     @BeforeAll
     // Перед началом написания тестов, инициализируем драйвер для взаимодействия с браузером.
     // Инициализация (от англ. initialization, инициирование) — создание, подключение, активация, подготовка к работе, определение параметров.
     static void setUpAll() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Java Works\\Netology Homeworks\\SeleniumSiteProjectMaven\\driver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Java Works\\Netology Homeworks\\SeleniumPracticeMaven1\\driver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options); //добавляем драйверу опции и методы по взаимодействию с объектами
@@ -28,7 +30,7 @@ public class TestUserSite {
 
         // добавляем страницам возможность работать с объектами
         registrationPage = new RegistrationPage(driver);
-        autoRegistration = new AutoRegistration(driver);
+        autoUserRegistration = new AutoUserRegistration(driver);
 
     }
 
@@ -73,10 +75,9 @@ public class TestUserSite {
     @Test
     void registrationTestPageObject2() {
         var userInfo = Data.validUserInformation();
-        autoRegistration.authorization(userInfo);
+        autoUserRegistration.authorization(userInfo);
 
     }
-/*
     @AfterEach
         // выходим из драйвера
     void tearsDown() {
@@ -84,6 +85,6 @@ public class TestUserSite {
         driver = null;
     }
 
- */
+
 
 }

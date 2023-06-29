@@ -6,11 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AutoRegistration {
+public class AutoUserRegistration {
 
     public WebDriver driver;
 
-    public AutoRegistration(WebDriver driver) {
+    public AutoUserRegistration(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
@@ -35,13 +35,13 @@ public class AutoRegistration {
     @FindBy(xpath = "/html/body/div[3]/div[1]/div[2]/form/table/tbody/tr[4]/td[2]/input")
     private WebElement registrationBtn;
 
-    public AutoRegistration authorization( Data.UserInformation info) {
+    public AutoUserRegistration authorization( Data.UserInformation info) {
         loginButton.click();
         nameField.sendKeys(info.getName());
         emailField.sendKeys(info.getEmail());
         passwordField.sendKeys(info.getPassword());
         registrationBtn.click();
-        return new AutoRegistration(driver);
+        return new AutoUserRegistration(driver);
     }
 
 }

@@ -1,3 +1,5 @@
+package tests;
+
 import data.Data;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
