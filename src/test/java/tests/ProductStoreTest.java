@@ -30,7 +30,7 @@ public class ProductStoreTest {
         driver = new ChromeDriver(options); //добавляем драйверу опции и методы по взаимодействию с объектами
         driver.getWindowHandle(); // опция для проведения тестов в открытом окне браузера
 
-        // добавляем странице возможность работать с объектами
+        // добавляем классу с веб-элементами страницы возможность работать с объектами
         mainPage = new MainPage(driver);
 
     }
@@ -65,11 +65,13 @@ public class ProductStoreTest {
         mainPage.singUp();
     }
 
-    @AfterEach
+  /*  @AfterEach
         // выходим из драйвера
     void tearsDown() {
         driver.quit();
         driver = null;
     }
+
+   */
 
 }
