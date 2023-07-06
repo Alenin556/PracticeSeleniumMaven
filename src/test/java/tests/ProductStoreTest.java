@@ -1,6 +1,6 @@
 package tests;
 
-import ProductStoreSitePage.MainPage;
+import ProductStore.MainPage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -58,20 +58,32 @@ public class ProductStoreTest {
     }
 
     @Test
-    void PageObjectTest1() {
+    void PageObjectLoginTest1() {
         mainPage.singUpIcon();
         mainPage.inputUsername("Andrew2");
         mainPage.inputPassword("Password2");
         mainPage.singUp();
     }
 
-  /*  @AfterEach
+    @Test
+    void AddPhoneToCartCssTest() {
+        driver.findElement(By.cssSelector("a[id='login2']")).click();
+        driver.findElement(By.cssSelector("input[id='loginusername']")).sendKeys("Andrew1");
+        driver.findElement(By.cssSelector("input[id='loginpassword'")).sendKeys("Password1");
+        driver.findElement(By.cssSelector("button[onclick='logIn()']")).click();
+        driver.findElement(By.xpath("//a[@onclick=\"byCat('phone')\"]")).click();
+        driver.findElement(By.cssSelector("a[href='prod.html?idp_=1']")).click();
+
+
+    }
+
+    @AfterEach
         // выходим из драйвера
     void tearsDown() {
         driver.quit();
         driver = null;
     }
 
-   */
+
 
 }

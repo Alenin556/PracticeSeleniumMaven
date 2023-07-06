@@ -1,4 +1,4 @@
-package ProductStoreSitePage;
+package ProductStore;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -36,16 +36,15 @@ public class MainPage {
         singUpPasswordField.sendKeys(password);
     }
 
-    //метод для подтверждения регистрации
-    public void singUp() {
-        singUp.click();
-    }
-
     //метод для выбора иконки с регистрацией
     public void singUpIcon() {
         singUpIcon.click();
     }
 
+    //метод для подтверждения регистрации
+    public void singUp() {
+        singUp.click();
+    }
 
 
 
