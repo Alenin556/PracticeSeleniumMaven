@@ -9,8 +9,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import pages.AutoUserRegistration;
-import pages.RegistrationPage;
+import UserBudget.AutoUserRegistration;
+import UserBudget.RegistrationPage;
 
 public class TestUserSite {
     private static WebDriver driver;
@@ -53,12 +53,11 @@ public class TestUserSite {
 
     @Test
     void registrationTestXpath() {
-        driver.findElement(By.xpath("//*[@id=\"main-menu\"]/ul/li[2]/a")).click();
-        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div[2]/form/table/tbody/tr[1]/td[2]/input")).sendKeys("Андрей23");
-        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div[2]/form/table/tbody/tr[2]/td[2]/input")).sendKeys("alenin12356@gmail.com");
-        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div[2]/form/table/tbody/tr[3]/td[2]/input")).sendKeys("AndrewXpath11");
-        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div[2]/form/table/tbody/tr[4]/td[2]/input")).click();
-
+        driver.findElement(By.xpath("//*[contains(text(),'Войти')]")).click();
+        driver.findElement(By.xpath("//*[(@name='name')]")).sendKeys("Андрей23");
+        driver.findElement(By.xpath("//*[(@name='email')]")).sendKeys("alenin12356@gmail.com");
+        driver.findElement(By.xpath("//*[(@name='password')]")).sendKeys("AndrewXpath11");
+        driver.findElement(By.xpath("//*[(@value='Авторизоваться')]")).click();
     }
 
 

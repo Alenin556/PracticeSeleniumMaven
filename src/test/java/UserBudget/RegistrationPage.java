@@ -1,4 +1,4 @@
-package pages;
+package UserBudget;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class RegistrationPage {
 
+    // Настройки необходимые для работы с веб-элементами
     public WebDriver driver;
     public RegistrationPage(WebDriver driver) {
         PageFactory.initElements(driver, this);

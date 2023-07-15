@@ -1,4 +1,4 @@
-package pages;
+package UserBudget;
 
 import data.Data;
 import org.openqa.selenium.WebDriver;
@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class AutoUserRegistration {
 
+    // Настройки необходимые для работы с веб-элементами
     public WebDriver driver;
 
     public AutoUserRegistration(WebDriver driver) {
@@ -15,27 +16,28 @@ public class AutoUserRegistration {
         this.driver = driver;
     }
 
+
     //локатор для кнопки входа или авторизации
-    @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[2]/a")
+    @FindBy(xpath = "//*[contains(text(),'Войти')]")
     private WebElement loginButton;
 
     // локатор для ввода имени
-    @FindBy(xpath ="/html/body/div[3]/div[1]/div[2]/form/table/tbody/tr[1]/td[2]/input")
+    @FindBy(xpath = "//*[(@name='name')]")
     private WebElement nameField;
 
     //локатор для ввода почты
-    @FindBy(xpath ="/html/body/div[3]/div[1]/div[2]/form/table/tbody/tr[2]/td[2]/input")
+    @FindBy(xpath = "//*[(@name='email')]")
     private WebElement emailField;
 
     //локатор для ввода пароля
-    @FindBy(xpath ="/html/body/div[3]/div[1]/div[2]/form/table/tbody/tr[3]/td[2]/input")
+    @FindBy(xpath = "//*[(@name='password')]")
     private WebElement passwordField;
 
     // локатор для кнопки регистрации
-    @FindBy(xpath = "/html/body/div[3]/div[1]/div[2]/form/table/tbody/tr[4]/td[2]/input")
+    @FindBy(xpath = "//*[(@value='Авторизоваться')]")
     private WebElement registrationBtn;
 
-    public AutoUserRegistration authorization( Data.UserInformation info) {
+    public AutoUserRegistration authorization(Data.UserInformation info) {
         loginButton.click();
         nameField.sendKeys(info.getName());
         emailField.sendKeys(info.getEmail());

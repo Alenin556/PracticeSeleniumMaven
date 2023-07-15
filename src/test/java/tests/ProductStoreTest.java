@@ -9,8 +9,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import pages.AutoUserRegistration;
-import pages.RegistrationPage;
 
 import java.util.concurrent.TimeUnit;
 
@@ -30,7 +28,7 @@ public class ProductStoreTest {
         driver = new ChromeDriver(options); //добавляем драйверу опции и методы по взаимодействию с объектами
         driver.getWindowHandle(); // опция для проведения тестов в открытом окне браузера
 
-        // добавляем классу с веб-элементами страницы возможность работать с объектами
+        // присваиваем переменной mainPage, объект класса MainPage, для взаимодействия с вебэлементами класса
         mainPage = new MainPage(driver);
 
     }
@@ -77,6 +75,7 @@ public class ProductStoreTest {
 
     }
 
+    // Метод, который будет выполняться после каждого теста
     @AfterEach
         // выходим из драйвера
     void tearsDown() {

@@ -21,7 +21,7 @@ public class Helper {
     @FindBy(css = "button[data-b='16']")
     private WebElement findButton;
 
-    //локатор для регистрации
+    // локатор для регистрации
     @FindBy(xpath ="//*[@id='signup']")
     private WebElement registrationButton;
 }
